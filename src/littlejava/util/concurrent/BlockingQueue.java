@@ -1,5 +1,12 @@
 package littlejava.util.concurrent;
 
+/**
+ * A Queue that
+ * - wait for the queue to become non-empty when retrieving an element,
+ * - wait for the queue to become non-full when storing an element.
+ *
+ * @param <E>
+ */
 public interface BlockingQueue<E> {
     /**
      * Inserts the specified element into this queue, waiting if necessary
@@ -7,8 +14,6 @@ public interface BlockingQueue<E> {
      *
      * @param e the element to add
      * @throws InterruptedException     if interrupted while waiting
-     * @throws ClassCastException       if the class of the specified element
-     *                                  prevents it from being added to this queue
      * @throws NullPointerException     if the specified element is null
      * @throws IllegalArgumentException if some property of the specified
      *                                  element prevents it from being added to this queue
